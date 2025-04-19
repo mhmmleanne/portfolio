@@ -26,7 +26,7 @@ const greeting = {
     "I'm an aspiring UI/UX designer, and currently a 2nd year student studying Computer Science and Design at Singapore University of Technology and Design. I'm enthuastic about all things front-end and have experience in designing and developing web and mobile applications using languages such as html/css/java/python."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1PUpab6GkUCm2q1iPAbOsn1SY7-qctj83/view?usp=sharing",
+    "https://drive.google.com/file/d/1PUpab6GkUCm2q1iPAbOsn1SY7-qctj83/view",
   displayGreeting: true
 };
 
