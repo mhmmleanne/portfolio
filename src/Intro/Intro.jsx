@@ -3,6 +3,7 @@ import { Mail, Github, Linkedin, Download } from "lucide-react";
 import image1 from "../assets/wallpapers/pic1.jpg";
 import image2 from "../assets/wallpapers/pic2.jpg";
 import image3 from "../assets/wallpapers/pic3.jpg";
+import resume from "../assets/portfolio/resume.pdf";
 
 export default function Intro() {
   return (
@@ -39,7 +40,7 @@ export default function Intro() {
 
             {/* Buttons */}
             <div className={styles.buttonrow}>
-              <a href="/resume.pdf" download className={styles.btnoutline}>
+              <a href={resume} download className={styles.btnoutline}>
                 <Download className={styles.icon} />
                 <span>Resume</span>
               </a>
