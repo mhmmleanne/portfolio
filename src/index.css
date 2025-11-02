@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Chicken-Quiche';
+  src: url('./assets/fonts/Chicken-Quiche.ttf') format('ttf');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('./assets/fonts/Geist-Regular.woff2') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Handmade-Market';
+  src: url('./assets/fonts/Handmade-Market') format('otf');
+  font-style: normal;
+  font-display: swap;
+}
+

@@ -1,0 +1,268 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+/* Whole scroll */
+.scrollOuter {
+  display: flex;
+  align-items: center;
+  transition: all 2s ease-in-out;
+  position: relative;
+  max-width: 100%;
+}
+
+/* Left and right caps */
+.cap {
+  height: 90vh;
+  max-height: 800px;
+  min-height: 400px;
+  width: auto;
+  transition: all 2.2s ease-in-out;
+  z-index: 2;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.leftCap {
+  transform-origin: left center;
+}
+
+.rightCap {
+  transform-origin: right center;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.middleSection {
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+
+  /* More adaptive height */
+  height: clamp(250px, 60vh, 500px);
+  width: 0;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: width 2s ease-in-out;
+  margin: 0 -20px;
+  z-index: 1;
+  position: relative;
+}
+
+
+
+/* Scroll animation states */
+.scrollOuter.rolled .middleSection {
+  width: 0;
+}
+
+.scrollOuter.unrolled .middleSection {
+  width: min(1200px, 70vw);
+}
+
+.scrollOuter.unrolled .rightCap {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Text fade in with delay AFTER scroll fully unrolls */
+.textContent {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease 2.2s, transform 0.8s ease 2.2s;
+  text-align: center;
+  width: 90%;
+  max-width: 1000px;
+  pointer-events: none;
+  height: 100%;
+}
+
+.scrollOuter.unrolled .textContent {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scrollOuter.rolled .textContent {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Header */
+.header {
+  font-size: clamp(1.5rem, 2.8vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #5b3a1c; 
+  text-shadow: 2px 2px #f8e7ca;
+  font-family: 'Chicken Quiche';
+  margin: 10px;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Experiences */
+.experienceWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experience {
+  background: rgba(255, 248, 230, 0.85);
+  border: 2px solid #c19a6b;
+  border-radius: 12px;
+  padding: 10px;
+  flex: 1;
+  min-width: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.experience:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.companyName {
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  font-weight: bold;
+  color: #4b2e05;
+  margin-bottom: 5x;
+  font-family: 'Chicken Quiche';
+}
+
+.yourRoleParent {
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  margin-bottom: 5px;
+  gap: 10px;
+}
+
+.yourRole {
+  font-weight: 500;
+  font-family: 'Chicken Quiche';
+}
+
+.yearXxxx {
+  color: #7b5410;
+  font-family: 'Chicken Quiche';
+}
+
+.description {
+  font-size: clamp(12px, 1.1vw, 30px);
+  margin-top: 5px;
+  line-height: 1.5;
+  color: #5b3a1c;
+  font-family: 'Geist';
+}
+
+.hp {
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  margin-top: 5px;
+  text-align: center;
+  color: #7b5410;
+  font-weight: bold;
+  font-family: 'Chicken Quiche';
+}
+.bottomArrows {
+  position: absolute;
+  bottom: clamp(5px, 1vh, 20px); /* Changed to vh and reduced max */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(20px, 4vw, 50px);
+  z-index: 10;
+  max-height: 15vh; /* Prevent arrows from going too high */
+}
+
+.bottomArrow {  
+  width: clamp(40px, 6vw, 70px);
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.bottomArrow:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .scrollOuter.unrolled .middleSection {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .cap {
+    height: 60vh;
+    min-height: 300px;
+  }
+
+  .middleSection {
+    height: 50h;
+    min-height: 200px;
+    margin: 0 -15px;
+  }
+
+  .scrollOuter.unrolled .middleSection {
+    width: 85vw;
+  }
+
+  .experienceWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .experience {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .header {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cap {
+    height: 50vh;
+    min-height: 250px;
+  }
+
+  .middleSection {
+    height: 50vh;
+    min-height: 250px;
+  }
+
+  .scrollOuter.unrolled .middleSection {
+    width: 90vw;
+  }
+
+  .textContent {
+    width: 95%;
+  }
+}
