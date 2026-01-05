@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Book.module.css";
+import Modal from "../Modal/modal";
+
 import bookBg from "../assets/images/book.png";
 import figma from "../assets/images/Figma.png";
 import github from "../assets/images/GitHub.png";
@@ -15,14 +17,10 @@ import escImage1 from "../assets/esc/esc_1.png";
 import escImage2 from "../assets/esc/esc_2.png";
 import escImage3 from "../assets/esc/esc_3.png";
 import escImage4 from "../assets/esc/esc_4.png";
-import portfolioImage1 from "../assets/portfolio/slide1.png";
-import portfolioImage2 from "../assets/portfolio/slide2.png";
 
 import javascriptIcon from "../assets/images/javascript.png";
 import javaIcon from "../assets/images/java.png";
 import pythonIcon from "../assets/images/python.png";
-import typescriptIcon from "../assets/images/typescript.png";
-import cssIcon from "../assets/images/css.png";
 import figmaIcon from "../assets/images/figmaicon.png";
 import firebaseIcon from "../assets/images/firebase.png";
 import mongodbIcon from "../assets/images/mongodb.png";
@@ -38,20 +36,37 @@ const projects = [
     name: "That Time I accidentally spilled Kaya Toast on my Shirt",
     role: "Solo Full Stack Developer",
     date: "Oct-Nov 2023",
-    writeup:
-      "Created for the 2023 Computational Thinking and Design 1D project, this Python game simulates a day-in-the-life where the player's choices shape the ending. The GUI was built and styled using Tkinter.",
+    writeup: [
+      "Developed a python-based simulation game with Tkinter UI modelling a SUTD student's daily routine",
+      "Independently managed both frontend and backend, improving code structure and time management",
+    ],
     tech: [pythonIcon],
     media: [{ src: ctdVideo, type: "video" }],
     figmaLink: null,
     githubLink: "https://github.com/mhmmleanne/CTD_1D_Project",
+    intro:
+      "This project was my first end-to-end full stack development experience, where I independently designed and built a Python-based simulation game modelling a student's daily routine. The focus was on experimenting with interface layout, interaction design, and translating creative ideas into a functional system under technical constraints.",
+    experience:
+      "I worked as a solo full stack developer, handling concept ideation, interface design, asset creation, and implementation. This included learning Tkinter from scratch, structuring the application logic, and building interactive UI components within a limited timeframe.",
+    ux: [
+      "Chose Tkinter as the UI framework due to Python-only constraints while still allowing for flexible layout and custom styling.",
+      "Drew inspiration from side-scrolling dialogue games to structure narrative flow and implemented basic micro-interactions such as hover and click states to enhance engagement.",
+      "Prioritised simplicity in layout and interaction after recognising the technical and performance limitations of the framework.",
+    ],
+    feedback:
+      "Initial concepts aimed for a more complex, modern game interface, but early development revealed limitations in Tkinter's performance and flexibility. Based on these constraints and time pressure, the scope was reduced and the interface refined to focus on core interactions and usability rather than visual complexity.",
+    outcome:
+      "The project was completed within a month and marked my first experience shipping a complete interactive system independently. It strengthened my time management skills, introduced me to frontend layout and interaction design, and helped me realise my interest in building and coding out visual interfaces.",
   },
   {
     id: "#002",
     name: "D'Light",
     role: "UX Designer",
     date: "Jan-Apr 2024",
-    writeup:
-      "Part of the 2024 Design Thinking and Innovation course, I incoporated double diamond and other design thinking skills to address safety in a dimly lit canteen staircase. Through user research and prototyping with Raspberry Pi sensors, my group developed a motion-sensored LED system that aimed to enhance safety and foster social interaction.",
+    writeup: [
+      "Incorporated double diamond and design thinking metrologies to address social interaction and safety concerns",
+      "Conducted user research, fieldwork to create low-fidelity and high-fidelity prototypes including a motion-sensor LED system using Raspberry PI which was evaluated through usability testing",
+    ],
     tech: [figmaIcon],
     media: [
       { src: dtiPoster, type: "image" },
@@ -60,14 +75,29 @@ const projects = [
     ],
     figmaLink: null,
     githubLink: null,
+    intro:
+      "D'Light was a design thinking project focused on improving safety and social interaction within a high-traffic campus space. Using the Double Diamond framework, the project explored how environmental design and interactive elements could address visibility, safety, and user experience issues in a shared public setting.",
+    experience:
+      "I worked as a UX Designer within a team, contributing to user research, site analysis, ideation, and prototyping. My responsibilities included conducting fieldwork, developing personas and journey maps, and supporting the creation of low and mid-fidelity prototypes for both physical and interactive components.",
+    ux: [
+      "Identified poor lighting, weather exposure, and structural degradation as key safety pain points through site analysis and field observations.",
+      "Designed a translucent dome structure to provide shelter while diffusing light, improving visibility without creating harsh illumination.",
+      "Integrated interactive lighting and sound elements to encourage social interaction while maintaining functional safety.",
+    ],
+    feedback:
+      "The solution went through multiple iterations, including scaled site models, functional prototypes of interactive mechanics, and visual representations of the environment. Feedback from testing and critique sessions informed refinements in material choice, interaction responsiveness, and overall feasibility.",
+    outcome:
+      "While the project focused on a physical installation, it significantly shaped my approach to UX. Although I was initially sceptical of the structured design thinking process, I later realised its value and continued applying these methodologies in subsequent projects and internships to uncover deeper user needs and generate more informed solutions.",
   },
   {
     id: "#003",
     name: "Split!!Mate",
     role: "Frontend Dev & UX Designer",
     date: "Jan-Apr 2025",
-    writeup:
-      "Split!! Mate is an Android app that simplifies splitting expenses among friends and groups, with real-time updates and automatic debt calculations. Built with Java, Firebase Realtime Database, and Firebase Authentication.",
+    writeup: [
+      "Led a team of 7 to design and build a group expense-tracking Android app to improve transparency and accountability of group purchases",
+      "Designed mock-ups, service models in Figma, implemented core features using Java and Firebase",
+    ],
     tech: [firebaseIcon, javaIcon, figmaIcon, htmlIcon],
     media: [
       { src: infosysPoster, type: "image" },
@@ -76,14 +106,29 @@ const projects = [
     figmaLink:
       "https://www.figma.com/design/DN1PMK705YtHkj6I3FC0j6/PSP-UI?node-id=0-1",
     githubLink: "https://github.com/NoelRook/SplitMate",
+    intro:
+      "Split!!Mate was a group expense-tracking Android application designed to simplify how people split shared purchases. The project was driven by personal pain points around tracking complex group expenses and aimed to create a more intuitive, accessible alternative to existing solutions that were either overly complex or paywalled.",
+    experience:
+      "I led the UX design and frontend development for the project, taking full ownership of the interface, interaction flows, and visual design. This included designing the entire Figma file, iterating on wireframes and mock-ups, and implementing all frontend screens and interactions in Android using Java and XML, integrated with Firebase.",
+    ux: [
+      "Designed a flexible item-based splitting workflow that allowed users to divide expenses by consumed items rather than percentages or fixed amounts, removing the need for manual calculations.",
+      "Prioritised receipt-based input through OCR and automatic GST calculation to reduce friction and speed up expense entry.",
+      "Used overlays and pop-ups instead of full page navigation for tightly related actions, keeping users grounded in the primary task flow.",
+    ],
+    feedback:
+      "Early feedback highlighted that the scope was too broad, particularly the inclusion of both personal and group tracking modes. Based on this, the project pivoted to focus on ease of input and clarity of group expense workflows as a clear point of differentiation. Iterative critique also influenced refinements in interaction flow, component states, and micro-interactions across the app.",
+    outcome:
+      "The final application was well received during the project showcase and recognised for having one of the strongest UI/UX executions in the cohort, as well as being among the most realistic and deployable solutions. This project significantly increased my confidence in designing and building end-to-end products and solidified my interest in pursuing UX design alongside frontend development.",
   },
   {
     id: "#004",
     name: "Im-Connected",
     role: "Frontend Dev & UX Designer",
     date: "June-Sept 2025",
-    writeup:
-      "IM-CONNECTED is a project under 50.003 Elements of Software Construction, aimed at designing a webapp to allievate the workload experienced by caregivers. Our webapp features multi-langugage support, easy reader mode and summarisation features hoping to make information accessible to all elderly.",
+    writeup: [
+      "Designed a webapp to alleviate the workload experienced by caregivers, focusing on accessibility-first UX (multi-language support, easy-reader mode, summarisation features, text-to-speech etc)",
+      "Created UI components and responsive layouts using React(JavaScript), containerised using Docker to ensure usability across all devices",
+    ],
     tech: [
       mongodbIcon,
       reactIcon,
@@ -102,23 +147,21 @@ const projects = [
     figmaLink:
       "https://www.figma.com/design/g7tJNxVOaBgosPzpOvZ0Xy/ESC-2025-project-prototype",
     githubLink: "https://github.com/Bearson678/IM-CONNECTED",
-  },
-  {
-    id: "#005",
-    name: "Portfolio",
-    role: "Frontend Dev and UX Designer",
-    date: "Oct 2025",
-    writeup:
-      "This current portfolio, featuring some early prototypes.",
-    tech: [typescriptIcon, cssIcon, htmlIcon, figmaIcon],
-    media: [
-      { src: portfolioImage1, type: "image" },
-      { src: portfolioImage2, type: "image" },
+    intro:
+      "Im-Connected is a caregiver support web application developed in collaboration with Lions Befrienders to improve caregiver wellbeing and access to resources. The project focused on addressing emotional burden, information fragmentation, and accessibility challenges faced by family caregivers supporting elderly dependents.",
+    experience:
+      "I was the primary UX designer and frontend developer for the project, leading user research, interface design, and frontend implementation. I owned the end-to-end design process, including stakeholder alignment, accessibility-focused design decisions, and the development of responsive UI components using React.",
+    ux: [
+      "Designed the application around an accessibility-first approach, including multi-language support, text-to-speech, easy-reader modes, and content summarisation to support users with varying literacy and cognitive needs.",
+      "Prioritised peer-to-peer support through a community forum, allowing caregivers to share lived experiences and emotional support beyond official government messaging.",
+      "Structured content to address both caregiver and care recipient needs, recognising the interdependence of their mental and emotional wellbeing.",
     ],
-    figmaLink:
-      "https://www.figma.com/design/PH5tMyEDJjlfXPHF7R5OKI/haha-for-fun?node-id=0-1&t=LDXFfPXdKi0osdgq-1",
-    githubLink: "https://github.com/Bearson678/IM-CONNECTED",
+    feedback:
+      "Working with an external stakeholder introduced ambiguous requirements and evolving expectations, requiring frequent iteration and prioritisation. Feedback suggested a deeper focus on fewer features rather than broader coverage, highlighting the tradeoff between depth and feasibility within project constraints.",
+    outcome:
+      "While some accessibility features received limited stakeholder attention, the project significantly expanded my understanding of inclusive design and accessibility considerations in real-world products. It reinforced the importance of designing for underserved user groups and strengthened my ability to advocate for accessibility-first decisions within a team setting.",
   },
+
 ];
 
 const Book = () => {
@@ -140,17 +183,6 @@ const Book = () => {
     setModalOpen(true);
   };
   const closeModal = () => setModalOpen(false);
-
-  const goNextSlide = (e) => {
-    e.stopPropagation();
-    setCurrentSlide((prev) => (prev + 1) % project.media.length);
-  };
-  const goPrevSlide = (e) => {
-    e.stopPropagation();
-    setCurrentSlide(
-      (prev) => (prev - 1 + project.media.length) % project.media.length
-    );
-  };
 
   const nextProject = () => {
     setCurrentProject((prev) => (prev + 1) % projects.length);
@@ -250,7 +282,11 @@ const Book = () => {
               </div>
             </div>
 
-            <div className={styles.writeup}>{project.writeup}</div>
+            <ul className={styles.writeup}>
+              {project.writeup.map((point, i) => (
+                <li key={i}>{point}</li>
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -270,31 +306,7 @@ const Book = () => {
           />
         </div>
 
-        {/* === MODAL === */}
-        {isModalOpen && (
-          <div className={styles.modalOverlay} onClick={closeModal}>
-            <button className={styles.navArrow} onClick={goPrevSlide}>
-              ‹
-            </button>
-            {project.media[currentSlide].type === "video" ? (
-              <video
-                src={project.media[currentSlide].src}
-                className={styles.modalImage}
-                controls
-                autoPlay
-              />
-            ) : (
-              <img
-                src={project.media[currentSlide].src}
-                alt="Full view"
-                className={styles.modalImage}
-              />
-            )}
-            <button className={styles.navArrow} onClick={goNextSlide}>
-              ›
-            </button>
-          </div>
-        )}
+        {isModalOpen && <Modal project={project} onClose={closeModal} />}
       </div>
     </div>
   );

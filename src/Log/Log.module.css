@@ -44,7 +44,7 @@
   background-position: center;
 
   /* More adaptive height */
-  height: clamp(250px, 60vh, 500px);
+  height: clamp(300px, 60vh, 600px);
   width: 0;
   overflow: hidden;
 
@@ -100,16 +100,15 @@
 
 /* Header */
 .header {
-  font-size: clamp(1.5rem, 2.8vw, 4rem);
+  font-size: clamp(1.4rem, 2.6vw, 4rem);
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #5b3a1c; 
   text-shadow: 2px 2px #f8e7ca;
   font-family: 'Chicken Quiche';
   margin: 10px;
-  padding: 0;
   line-height: 1;
-}
+}s
 
 /* Experiences */
 .experienceWrapper {
@@ -117,7 +116,6 @@
   justify-content: center;
   align-items: stretch;
   flex-wrap: nowrap;
-  gap: 20px;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -129,8 +127,12 @@
   border-radius: 12px;
   padding: 10px;
   flex: 1;
-  min-width: 0;
+  width: 100%;
   transition: transform 0.3s, box-shadow 0.3s;
+}
+.ul {
+  line-height: 1.65;
+  padding-left: 1.5rem;
 }
 
 .experience:hover {
@@ -149,7 +151,7 @@
 .yourRoleParent {
   display: flex;
   justify-content: space-between;
-  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.8rem, 1vw, 1.1rem);
   margin-bottom: 5px;
   gap: 10px;
 }
@@ -165,7 +167,7 @@
 }
 
 .description {
-  font-size: clamp(12px, 1.1vw, 30px);
+  font-size: clamp(10px, 0.9vw, 30px);
   margin-top: 5px;
   line-height: 1.5;
   color: #5b3a1c;
@@ -173,7 +175,7 @@
 }
 
 .hp {
-  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.6rem, 0.8vw, 1rem);
   margin-top: 5px;
   text-align: center;
   color: #7b5410;
@@ -222,7 +224,7 @@
   }
 
   .middleSection {
-    height: 50h;
+    height: 50vh;
     min-height: 200px;
     margin: 0 -15px;
   }
@@ -239,7 +241,6 @@
 
   .experience {
     width: 100%;
-    max-width: 400px;
   }
 
   .header {
@@ -255,7 +256,7 @@
 
   .middleSection {
     height: 50vh;
-    min-height: 250px;
+    min-height: 300px;
   }
 
   .scrollOuter.unrolled .middleSection {

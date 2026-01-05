@@ -12,9 +12,10 @@ const dummyData = [
     role: "UI/UX Designer & Dev",
     year: "Aug-Dec 2025",
     description: [
-      "Analyzed existing research, manuals, and workflows to identify major system and UX inefficiencies.",
-      "Designed improved workflows and core use cases addressing unstable forms and unreliable data.",
-      "Prototyped frontend components in Figma using the ShadCN design system.",
+      "Led end-to-end UX design for eGreenGov, a large-scale, data-driven government digital platform, applying user-centric design to improve complex sustainability reporting workflows",
+      "Designed 40+ screens across 3 core workflows, reusable components in Figma using ShadCN design system, delivering a high-fidelity prototype for stakeholder validation",
+      "Partnered closely with software engineers to ensure UX feasibility across relational data models, ETL data flows, supporting multi-agency use cases",
+      "Worked in an Agile environment (Jira, Confluence, Slack, standups etc), iterated designs across 4 stakeholder reviews"
     ],
 
     hp: "+50 HP +10 DEF",

@@ -250,17 +250,21 @@
 
 
 .writeup {
-  text-align: center;
-  font-size: clamp(10px, 1.5vw, 20px);
+  text-align: left;
+  font-size: clamp(10px, 1.2vw, 20px);
   line-height: 1.2;
-  font-family: 'Geist', cursive;
+  font-family: 'Geist';
   flex-shrink: 0;
-  height: 40%;
+  height: 35%;
   padding: clamp(2px, 0.5vh, 12px) clamp(3px, 0.6vw, 16px);
   word-wrap: break-word;
   overflow-wrap: break-word;
   max-width: 100%;
   overflow: hidden;
+}
+.writeup li {
+  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
 
@@ -437,7 +441,7 @@
   
   .leftPage,
   .rightPage {
-    gap: clamp(1px, 0.5vh, 12px);
+    gap: clamp(1px, 0.4vh, 12px);
   }
   
   .header { 
@@ -446,11 +450,10 @@
   }
   
   .writeup {
-    font-size: clamp(10px, 1.2vw, 20px);
+    font-size: clamp(10px, 1vw, 20px);
     padding: clamp(1px, 0.3vh, 8px) clamp(2px, 0.4vw, 12px);
-    height: 40%;
+    height: 30%;
   }
-  
 
   
   .frameParent {
@@ -472,7 +475,7 @@
   
   .leftPage,
   .rightPage {
-    gap: clamp(1px, 0.4vh, 10px);
+    gap: clamp(1px, 0.3vh, 10px);
   }
   
   .header {
@@ -481,7 +484,7 @@
   }
   
   .writeup {
-    font-size: clamp(10px, 0.8vw, 16px);
+    font-size: clamp(8px, 0.7vw, 16px);
     padding: clamp(1px, 0.2vh, 6px) clamp(2px, 0.3vw, 10px);
   }
   
@@ -525,7 +528,7 @@
   }
   
   .writeup {
-    font-size: clamp(8px, 0.5vw, 16px);
+    font-size: clamp(6px, 0.4vw, 16px);
     padding: clamp(1px, 0.2vh, 4px) clamp(1px, 0.2vw, 8px);
   }
   

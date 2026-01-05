@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin, Download } from "lucide-react";
 import image1 from "../assets/wallpapers/pic1.jpg";
 import image2 from "../assets/wallpapers/pic2.jpg";
 import image3 from "../assets/wallpapers/pic3.jpg";
-import resume from "../assets/portfolio/resume.pdf";
+import updatedresume from "../assets/portfolio/resume_summer2026.pdf";
 
 export default function Intro() {
   return (
@@ -34,13 +34,13 @@ export default function Intro() {
             <p className={styles.introdescription}>
               I'm a 3rd year student studying Computer Science and Design (CSD)
               @ SUTD! I love building cool(and pretty) webapps/apps and below
-              are several projects that I have worked on! I'm currently doing a
-              UI/UX Developer Internship in Govtech Singapore.
+              are several projects that I have worked on! Feel free to reach out
+              to me via email or LinkedIn!
             </p>
 
             {/* Buttons */}
             <div className={styles.buttonrow}>
-              <a href={resume} download className={styles.btnoutline}>
+              <a href={updatedresume} download className={styles.btnoutline}>
                 <Download className={styles.icon} />
                 <span>Resume</span>
               </a>
